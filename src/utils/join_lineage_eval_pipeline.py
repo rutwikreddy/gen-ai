@@ -32,23 +32,16 @@ import argparse
 from typing import List, Dict, Any
 
 # LangChain / LangGraph / LangSmith imports
-try:
-    from langchain_community.document_loaders import GitLoader
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
-    from langchain_ollama import OllamaLLM
-    from langchain.prompts import PromptTemplate
-    from langchain.chains import LLMChain
-    from langgraph.graph import Graph, StateGraph, END
-    from langgraph.nodes import TransformNode
-    # LangSmith tracing - import best-effort (placeholder if not installed)
-    from langsmith import client as ls_client, traceable
-except Exception as e:
-    # Provide informative message when modules are unavailable.
-    print("Warning: One or more Lang* libraries are not installed or importable.")
-    print("Install required packages to run the pipeline: langchain, langchain-community, langgraph, langsmith, langchain-ollama")
-    print("Error detail:", e)
-    # Continue — the script can still be inspected or saved even if imports fail.
 
+from langchain_community.document_loaders import GitLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_ollama import OllamaLLM
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langgraph.graph import Graph, StateGraph, END
+from langgraph.nodes import TransformNode
+# LangSmith tracing - import best-effort (placeholder if not installed)
+from langsmith import client as ls_client, traceable
 # -----------------------------
 # Helper utilities
 # -----------------------------
